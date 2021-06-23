@@ -1,0 +1,339 @@
+/*Bruker @font-face for å hente inn fonten til dokumentet, gir den navn i font-family, i src skjer selve innlastningen av fonten.*/
+@font-face {
+  font-family: creepster;
+  src: url("Creepster-Regular.ttf") format("truetype");
+}
+
+/*Bruker @font-face for å hente inn fonten til dokumentet, gir den navn i font-family, i src skjer selve innlastningen av fonten.*/
+@font-face {
+  font-family: caesardressing;
+  src: url("CaesarDressing-Regular.ttf") format("truetype");
+}
+
+/* Styling på h1 taggene
+position fixed for at den er "relativ" til viewport
+z-index 2 for å få den over bilde
+top 1px for at den skal være 1px fra toppen
+color white for hvit farge på teksten
+text-shadow for å gi skygge effekt her med fargerik skyge
+font-family: creepster bruker her fonten som er lastet inn.
+font-size er satt til 75px, øker.
+*/
+h1{
+  position: fixed;
+  z-index: 2;
+  top: 1px;
+  color: white;
+  text-shadow: 0.05em 0 0 rgba(255, 0,0,0.75),
+       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+        0.025em  0.05em 0 rgb(0, 0, 255, 0.75);
+  font-family: creepster;
+  font-size: 75px;
+}
+
+/* styling på body
+height og width satt til 100% for å dekke siden
+display sat til flex
+justify-content center, sentrerer
+align-items sentrerer elemetene
+0 padding og margin
+background: black, sort bakgrunn
+*/
+body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  padding: 0;
+  margin:0;
+  background: black;
+}
+/* styling på bilde nr1
+top, bottom, left satt til 0 samt heigth 100% for å fylle ut
+Opacity satt til 1
+transition sikter til 1.opacity tar 1sek å endre, easer in og ut. 2.width tar 2s å fullføre easer inn og ut.
+Satt som block element
+*/ 
+#image1{
+  top:0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, width 2s ease-in-out;
+  display: block;
+}
+
+/* styling på bilde nr 2
+top, bottom, left satt til 0 samt heigth 100% for å fylle ut
+Opacity satt til 1
+transition sikter til 1.opacity tar 1sek å endre, easer in og ut. 2.width tar 2s å fullføre easer inn og ut.
+Satt som block element
+*/
+#image2{
+  top:0;
+  bottom: 0;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, width 2s ease-in-out;
+  display: block;
+}
+/* styling på bilde nr3
+top, bottom, left satt til 0 samt heigth 100% for å fylle ut
+Opacity satt til 1
+transition sikter til 1.opacity tar 1sek å endre, easer in og ut. 2.width tar 2s å fullføre easer inn og ut.
+Satt som block element
+*/
+#image3{
+  top:0;
+  bottom: 0;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, width 2s ease-in-out;
+  display: block;
+}
+/* styling på hover over bildet
+Når man hovrer over bildet blir opacity 80%
+samt with øker til 40%
+*/
+#image1:hover{
+  top:0;
+  opacity:.8;
+  width: 40%;
+  position: relative;
+}
+/* styling på hover over bildet
+Når man hovrer over bildet blir opacity 80%
+samt with øker til 40%*/
+#image2:hover{
+  top:0;
+  opacity:.8;
+  width: 40%;
+  position: relative;
+}
+/* styling på hover over bildet
+Når man hovrer over bildet blir opacity 80%
+samt with øker til 40%*/
+#image3:hover{
+  top:0;
+  opacity:.8;
+  width: 40%;
+  position: relative;
+}
+/* styling på text over bildet. 
+position satt til fixed for å endre i forhold til viewport
+z-index satt til 2 for å ligge over
+top 400px da den er fra toppen
+left brukes prosent for å få korrekt i midten
+opacity satt til 0, endres senere med hover
+color satt med rgb(hvit)
+font-size satt til 20px
+font-family brukes caesardressing
+Lagt til tekst skygge
+*/
+#text1{
+  position: fixed;
+  z-index: 2;
+  top: 400px;
+  left: 16.165%;
+  opacity: 0;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: caesardressing;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* styling på span for å lage en break line effekt */
+.break{
+  display:block;
+  height:10px;
+}
+
+/* styling på hoover over text
+bruker ~ for å velge sibling når vi hoverer over image.
+Opacity blir 1 (synlig)
+left satt 30px fra venstre, treffer midten av bildet
+transition treffer opacity og angir at det tar 1.7sek og at den skal ease in og ut
+*/
+#image1:hover ~ #text1{
+  opacity: 1;
+  left: 30px;
+  transition: opacity 1.7s ease-in-out;
+}
+/* styling på text over bildet.
+styling på text over bildet. 
+position satt til fixed for å endre i forhold til viewport
+z-index satt til 2 for å ligge over
+top 400px da den er fra toppen
+left brukes prosent for å få korrekt i midten
+opacity satt til 0, endres senere med hover
+color satt med rgb(hvit)
+font-size satt til 20px
+font-family brukes caesardressing
+Lagt til tekst skygge*/
+#text2{
+  position: fixed;
+  z-index: 2;
+  top: 400px;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  font-family: caesardressing;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* styling på hoover over text
+bruker ~ for å velge sibling når vi hoverer over image.
+Opacity blir 1 (synlig)
+transition treffer opacity og angir at det tar 1.7sek og at den skal ease in og ut*/
+#image2:hover ~ #text2{
+  opacity: 1;
+  transition: opacity 1.7s ease-in-out;
+}
+/* styling på text over bildet.
+styling på text over bildet. 
+position satt til fixed for å endre i forhold til viewport
+z-index satt til 2 for å ligge over
+top 400px da den er fra toppen
+left brukes prosent for å få korrekt i midten
+opacity satt til 0, endres senere med hover
+color satt med rgb(hvit)
+font-size satt til 20px
+font-family brukes caesardressing
+Lagt til tekst skygge*/
+#text3{
+  position: fixed;
+  z-index: 2;
+  top: 400px;
+  right: 16.165%;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  font-family: caesardressing;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* styling på hoover over text
+bruker ~ for å velge sibling når vi hoverer over image.
+Opacity blir 1 (synlig)
+right satt 30px fra høyre, treffer midten av bildet
+transition treffer opacity og angir at det tar 1.7sek og at den skal ease in og ut
+*/
+#image3:hover ~ #text3{
+  opacity: 1;
+  right: 30px;
+  transition: opacity 1.7s ease-in-out;
+}
+
+/* styling på header på bildet nr1
+position satt til fixed for å endre i forhold til viewport
+z-index 2 for å ligge over bildet
+top 150px; 150px fra toppen
+left 10.165% plasserer headeren der vi ønsker ca midten
+color white, hvit tekst
+font-family:caesardressing
+font-size 50px,øker strl. på teksten
+text-shaddow, legger til skygge bak som er fargerik.
+*/
+#header1{
+  position: fixed;
+  z-index: 2;
+  top: 150px;
+  left: 10.165%;
+  color: white;
+  font-family: caesardressing;
+  font-size: 50px;
+  text-shadow: 0.05em 0 0 rgba(255, 0,0,0.75),
+       -0.025em -0.05em 0 rgba( 0, 255, 0, 0.75),
+        0.025em  0.05em 0 rgb(0, 0, 255, 0.75);
+}
+
+
+/* styling på header på bildet nr2
+position satt til fixed for å endre i forhold til viewport
+z-index 2 for å ligge over bildet
+top 150px; 150px fra toppen
+color white, hvit tekst
+font-family:caesardressing
+font-size 50px,øker strl. på teksten
+text-shaddow, legger til skygge bak som er fargerik.*/
+#header2{
+  position: fixed;
+  z-index: 2;
+  top: 150px;
+  color: white;
+  font-size: 50px;
+  font-family: caesardressing;
+  text-shadow: 0.05em 0 0 rgba(255, 0,0,0.75),
+       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+        0.025em  0.05em 0 rgb(0, 0, 255, 0.75);
+}
+
+/* styling på header på bildet nr3
+position satt til fixed for å endre i forhold til viewport
+z-index 2 for å ligge over bildet
+top 150px; 150px fra toppen
+color white, hvit tekst
+font-family:caesardressing
+font-size 50px,øker strl. på teksten
+text-shaddow, legger til skygge bak som er fargerik.*/
+#header3{
+  position: fixed;
+  z-index: 2;
+  top: 150px;
+  right: 10.165%;
+  color: white;
+  font-size: 50px;
+  font-family: caesardressing;
+  text-shadow: 0.05em 0 0 rgba(255, 0,0,0.75),
+       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+        0.025em  0.05em 0 rgb(0, 0, 255, 0.75);
+}
+
+/* styling på innput link til hovedsiden
+text-decoration:none fjerner underline
+position fixed for å endre i forhold til viewport
+z-index 2 for å være "øverste laget"
+top:600px, 600px fra toppen av siden.
+*/
+#link{
+  text-decoration:none;
+  position: fixed;
+  z-index: 2;
+  top: 600px;
+}
+
+/* styling på button 
+position fixed for å endre i forhold til viewport
+right:46% fra høyre
+border-radius 13% avrunder hjørnene
+color:white gir hvit tekst
+background-color angir bakgrunnsfargen til grønn
+font-size endres til 15px
+text-shadow legger til blå "kant" rundt bokstavene
+font-family angir hvilken font som skal brukes
+bottom 20px; satt 20px opp fra bunn.
+*/
+#button{
+  position: fixed;
+  right: 46%;
+  border-radius: 13%;
+  color:white;
+  background-color: green;
+  font-size: 15px;
+  text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+  font-family: caesardressing;
+  bottom: 20px;
+}
+/* styling hover over button
+transform: scale(1.25) øker strl. med 25%
+background-color settes til rød
+bottom 20px fra bunn selv med hover
+transition sier at den skal treffe color ta 2s før den er ferdig og ease inn og ut. 
+*/
+#button:hover{
+  transform: scale(1.25);
+  background-color: red;
+  bottom: 20px;
+  transition: background-color 2s ease-in-out;
+}
+

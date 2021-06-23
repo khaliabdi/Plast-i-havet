@@ -1,0 +1,204 @@
+body{
+  overflow-x: hidden;
+}
+
+/*Bruker @font-face for å hente inn fonten til dokumentet, gir den navn i font-family, i src skjer selve innlastningen av fonten.*/
+@font-face {
+  font-family: Wallpoet;
+  src: url("Wallpoet-Regular.ttf") format("truetype");
+}
+
+/* styling på bakgrunnbildet
+Position absoulte da den går etter body
+max,min width og heigth satt til 100% alltid hele skjermen, samt at den skal være 0px fra høyre,venstre,top og bunn.
+z-index -1 for at det skal ligge bak.
+*/
+#bg{
+  position: absolute;
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  z-index: -1; 
+}
+
+/* styling på overskrift
+text-align center sentrerer
+font-family bruker valgt font
+z-index 2 for at den skal ligge foran
+*/ 
+#topTxt {
+  text-align: center;
+  font-family: wallpoet;
+  z-index:2;
+}
+
+/* font for h2 overskriften i how boksen */
+h2{
+  font-family: wallpoet;
+}
+
+/* styling på span for å lage en break line effekt */
+.break{
+  display:block;
+  height:10px;
+}
+
+/* styling på p taggen 
+font-family for å bruke valgt font
+color:er satt med hex til å være gråhvit
+text-shadow for å få sort bak bokstavene, lettere å lese
+text-align center for å midt sille
+legger inn margin for å flytte den fra "center"
+font-size satt til 25px
+z-index satt til 2 for å komme foran
+*/
+p {
+  font-family: wallpoet;
+  color: #F1EEEE;
+  text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+  text-align: center;
+  font-size: 25px;
+  z-index:2;
+}
+
+/* ID lenket til p taggen med info, her henter vi inn keyframe animasjonen samt posisjonerer iden slik at den blir sentrert.*/
+#fact{
+  animation-name: textappear;
+  animation-duration: 5s;
+  position:fixed;
+  margin-left:300px;
+} 
+
+/* Røde bokstaver inne i how boxen */
+span{
+  color:red;
+}
+
+/* How boxens posisjonering, størrelse o.l 
+position fixed for å flytte de i forhold til viewport
+bottom og left flyttes 100px fra.
+transition er satt til å ta 1.5sek
+transition-property er hva som skal endres.
+background-color setter farge på hele boksen
+width 15% passet designmessig.
+height 50% passet bra iforhold til at bare litt tekst skal syntes før hover
+text-align:center, sentrer teksten
+overflow:hidden gjemmer det som kommer utenfor/ikke får plass
+opacity satt til 0 slik at den i keyframes endres
+border-radius satt til 8px, ser bra ut
+animation-name henter inn keyfamen
+animation-duration satt til 5sek
+anumation-delayed forsinker animasjonen 3sek
+animation-fill-mode forwards gjør at animasjonen stopper på 100%
+*/
+#infoContainer{
+  position: fixed;
+  bottom: 100px;
+  left: 100px;
+  transition: 1.5s;
+  transition-property: height, background-color;
+  background-color: #2a75a9;
+  width: 15%;
+  height: 50px;
+  text-align: center;
+  overflow: hidden;
+  opacity: 0;
+  border-radius: 8px;
+  animation-name: boxappear;
+  animation-duration: 5s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+}
+
+/* endrer størrelsen og farge på how boxen når du 
+tar musepeker over*/
+#infoContainer:hover{
+  height:280px;
+  background-color:#F1F015;
+}
+
+/* Styling og posisjonering av måke nr 2 i dette prosjektet, blant annet slik at den ligger bak teksten her med z-index 1 så den kommer bak teksten.*/
+#seagull {
+  position: absolute;
+  right: -50px;
+  top: 10px;
+  animation-name: seagullfly;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 1;
+ }
+
+/* styling på button
+position satt til fixed slik at den flyttes i forhold til viewport
+right:46% optimal plassering, ca midten
+border-radius:13% avrunder kantene
+color:white setter tekstfarge til hvit
+background-color black, setter sort bakgrunnsfarge
+font-family: bruker angitt font
+font-size 15px setter fonten til å være 15px
+text-shadow legger til blå farge rundt teksten.
+bottom: 20px fra bunn av siden.
+*/
+#button{
+  position: fixed;
+  right: 46%;
+  border-radius: 13%;
+  color:white;
+  background-color: black;
+  font-family: wallpoet;
+  font-size: 15px;
+  text-shadow: -1px 0 blue, 0 1px blue, 1px 0 blue, 0 -1px blue;
+  bottom: 20px;
+}
+
+/* Button øker i størrelse med skala 1.25 når
+musepeker er over den*/
+#button:hover{
+  transform: scale(1.25);
+}
+
+/* Keyframe animasjoner for at teksten (p-tag) med fakta 
+skal komme opp fra bunn av siden*/
+@keyframes textappear{
+  0% {
+    bottom: -100%;
+  }
+  100%{
+    bottom: 175px;
+  }
+}
+
+/* Keyframe animasjoner for at måken kunne fly over siden
+0% starter på utisden av viewport/500px til venstre fra høyre side.
+100% avslutter utenfor/2000px fra høyre.*/
+@keyframes seagullfly {
+  0% {
+      right:-500px;
+  }
+  100% {
+      right: 2000px;
+  }
+}
+
+/* Keyframe animasjoner for at how boksen (infoboks klassen) med moro ska komme opp 
+0% så er den utenfor siden
+75% så øker opacity opptil 50%, boksen er på vei til sin plass
+100% står 90px fra venstre, med 100% opacity
+*/
+@keyframes boxappear{
+  0% {
+    left:-500px;
+  }
+  75%{
+    opacity: 0.5;
+  }
+  100% {
+    left:90px;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+    <head>
+        <link rel="stylesheet" href="css/plastic.css" type="text/css" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>Plastic</title>
+    </head>
+	
+    <body>
+        <!-- Her er det bildet i backgrunnen, oppretter ID for å bruke det som en bakgrunn.-->
+        <img src="images/bgplast.jpg" alt="background" id="bg">
+        <!--Måke gif som animeres i css-->
+        <img src="images/seagull.gif" alt="seagull" id="seagull"/>
+
+          <!--Oppretter ID for h1, bruker span med stylet class som linjeavbrudd for å å dele den opp.-->
+        <h1 id="topTxt">Plastic is the worst
+            <span class="break"></span>Monster in the sea
+        </h1>
+
+        <!--Oppretter ID for info teksen her med fakta, derav navnet på ID'en. Fylt inn info. Animert i css. -->
+        <p id="fact">An estimated 14 billion pounds of trash, 
+        	<span class="break"></span>most of it plastic, is dumped in the world’s oceans every year.
+            <span class="break"></span>
+            <span class="break"></span>Plastic bags and other plastic garbage thrown into 
+            <span class="break"></span>the ocean kill as many as 1 million sea creatures every year
+            <span class="break"></span>
+            <span class="break"></span>A sea turtle found dead off Hawaii had
+            <span class="break"></span>over 1000 pieces of plastics in its intestines.
+            <span class="break"></span>
+            <span class="break"></span>Approximately 70% of plastic sinks to the bottom 
+            <span class="break"></span>where it sits like a time bomb, waiting to be assimilated.
+            <span class="break"></span>
+            <span class="break"></span>Plastics absorb organic pollutants like toxic sponges, 
+            <span class="break"></span>concentrating the poisons and finding     
+            <span class="break"></span>their way into the foodchain, from fish to humans.   
+        </p>
+        <!--Oppretter en div og gir den en ID for å style den til å være boksen man ser før hover.
+            h2 for teksten man ser på boksen, blir som en header til p taggen som er skjult før hover.
+            Bruker span med stylet class for mellomrom
+         -->
+        <div id="infoContainer">
+            <h2>How</h2>
+            <p>Can you make a difference?<span class="break"></span>
+            Make <span>an</span> interactive HTML page about it<span class="break"></span> Sea?</p>
+        </div>
+
+         <!--Her har vi opprettet a med href som linker til hovedsiden
+                    Restriksjonene angir at vi ikke kan bruke button så setter her
+                    input med type button, id for å style, value setter hva som står på knappen.
+                -->
+         <a href="index.html" id="link">
+            <input type="button" id="button" value="Take me back"/>
+         </a> 
+
+    </body>	
+</html>

@@ -1,0 +1,445 @@
+/*Bruker @font-face for å hente inn fonten til dokumentet, gir den navn i font-family, i src skjer selve innlastningen av fonten fra ttf filen.*/
+@font-face {
+  font-family: PressStart2P;
+  src: url("PressStart2P-Regular.ttf");
+}
+/*  Bruker linear-gradient med på body-background for å få mørkere farge relativ til havdybden.
+    Hexcode som farge hentet fra elementene rundt.
+    Overflow-x satt som hidden fjerner scrolle til siden muligheten.*/ 
+body{
+    padding: 0;
+    margin: 0;
+    height: 10500px;
+    background: linear-gradient(180deg, #97EBF4 0%, #FFFFFF 16%, #5B84BC 15.5%, #004C8D 45%, #00172D 75%);
+    overflow-x: hidden;
+}
+
+/* Styling av section som inneholder h-taggene. Bruker 3 forskjellige
+verdier av text-shadow for å skape 3D effekt.
+Henter inn keyframe som gjør at det blir "discoeffekt" på text-shaddow.
+Se kommentar på keyframen headings.
+Animation-name henter inn keyframen
+Animation-duration er satt så den bruker 1s på hele animasjonen
+Animation-timing-function satt til linear gjør at den går like fort hele "loopen"
+animation-iteration-count er satt til infinte slik at den kjøres på nytt når den er ferdig
+*/
+.headings{
+    text-align: center;
+    padding: 265px 0;
+    border: 3px;
+    font-family: PressStart2P;
+    font-size: 20px;
+    text-shadow: 0.05em 0 0 rgba(255, 0,0,0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+     0.025em  0.05em 0 rgba(0, 0, 255, 0.75);
+    animation-name: headings;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* padding for id clickinfo som er på en h5 */
+#clickInfo{
+    padding: 300px;
+}
+
+/* Posisjonering av container som inneholder bildene på index-siden
+display er satt som flex slik at vi bruker flex
+flex-direction er satt til column så bildene kommer under hverandre
+justify-content center slik at det sentreres
+align-items center sentrerer.
+    */
+.imageContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+/* animasjon for monsterbildene slik at de flyter opp og ned i vannet ved bruk av class-div
+Animation-name henter inn keyframen
+Animation-duration er satt så den bruker 3s på hele animasjonen
+Animation-timing-function satt til ease-in-out gjør at den "easer" både i starten og slutten
+animation-iteration-count er satt til infinte slik at den kjøres på nytt når den er ferdig
+animation-direction er satt til alternate slik at den går opp til 100% deretter ned til 0%,spiller av forover og bakover
+*/
+.images{
+  animation-name: upNDown;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Posisjonering av container som inneholder Umibozu
+Posisjonering satt til absolute slik at den flyttes i forhold til nærmeste anker-element
+Display flex for å bruke flex
+flex-direction satt til column for å sette den i "kolonne"
+justify-content er satt til senter for sentrering
+align-items er satt til senter for sentrering
+top er satt fra 190% slik at den er 90% under skjermen som er ikke scrollet. Dette er for å få han "ned i overlayet"korrekt.
+*/
+#umibozuContainer { 
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 190%;   
+}
+
+/* Satt bredden til 60% på selve bildet av Umibozu
+for å matche det mer med omgivelsene*/ 
+#umibozu {
+  width: 60%;
+}
+
+/* image-link til infoside om Umibozu
+Posisjonert med absolute
+top,left,right,bottom er satt til 0px fra slik at fyller hele diven den står i, og man kan trykke hvor som helst innenfor diven for å komme seg til info siden.
+z-index er satt til 999 slik at den ligger over, valgte høyt tall slik at vi ikke skal få problemer med at det kommer under noe annet
+Cursor er satt til pointer, slik at musepilen blir til musepeker.
+*/
+#umibozuLink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    cursor: pointer;
+}
+
+/* Posisjonering av container som inneholder World Serpent
+Posisjonering satt til absolute slik at den flyttes i forhold til nærmeste anker-element
+Display flex for å bruke flex
+flex-direction satt til column for å sette den i "kolonne"
+justify-content er satt til senter for sentrering
+align-items er satt til senter for sentrering
+top er satt fra 400% slik at den går videre ned på siden forbi 100% som er skjermen man ser når man kommer inn på siden.
+*/
+#serpentContainer { 
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 400%;
+}
+/* Satt bredden til 65% på selve bildet av World Serpent 
+for å matche det mer med omgivelsene*/
+#serpent {
+  width: 65%;
+}
+
+/* image-link til infoside om World Serpant 
+Posisjonert med absolute
+top,left,right,bottom er satt til 0px fra slik at fyller hele diven den står i, og man kan trykke hvor som helst innenfor diven for å komme seg til info siden.
+z-index er satt til 999 slik at den ligger over, valgte høyt tall slik at vi ikke skal få problemer med at det kommer under noe annet
+Cursor er satt til pointer, slik at musepilen blir til musepeker.
+*/
+#serpentLink{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* Posisjonering av container som inneholder Leviathan
+Posisjonering av container som inneholder World Serpent
+Posisjonering satt til absolute slik at den flyttes i forhold til nærmeste anker-element
+Display flex for å bruke flex
+flex-direction satt til column for å sette den i "kolonne"
+justify-content er satt til senter for sentrering
+align-items er satt til senter for sentrering
+top er satt fra 700% slik at den går videre ned på siden forbi 100% som er skjermen man ser når man kommer inn på siden.*/
+#leviathanContainer { 
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 700%;
+}
+
+/* Satt bredden til 55% på selve bildet av Leviathan 
+for å matche det mer med omgivelsene */
+#leviathan {
+  width: 55%;
+}
+
+/* image-link til infoside om Leviathan
+Posisjonert med absolute
+top,left,right,bottom er satt til 0px fra slik at fyller hele diven den står i, og man kan trykke hvor som helst innenfor diven for å komme seg til info siden.
+z-index er satt til 999 slik at den ligger over, valgte høyt tall slik at vi ikke skal få problemer med at det kommer under noe annet
+Cursor er satt til pointer, slik at musepilen blir til musepeker.
+*/
+#leviathanLink{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* Posisjonering av container som inneholder Kraken
+Posisjonering av container som inneholder World Serpent
+Posisjonering satt til absolute slik at den flyttes i forhold til nærmeste anker-element
+Display flex for å bruke flex
+flex-direction satt til column for å sette den i "kolonne"
+justify-content er satt til senter for sentrering
+align-items er satt til senter for sentrering
+top er satt fra 1000% slik at den går videre ned på siden forbi 100% som er skjermen man ser når man kommer inn på siden.*/
+#krakenContainer { 
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1000%;
+}
+
+/* Satt bredden til 85% på selve bildet av Kraken 
+for å matche det mer med omgivelsene  */
+#kraken {
+  width: 85%;
+}
+
+/* image-link til infoside om Kraken
+Posisjonert med absolute
+top,left,right,bottom er satt til 0px fra slik at fyller hele diven den står i, og man kan trykke hvor som helst innenfor diven for å komme seg til info siden.
+z-index er satt til 999 slik at den ligger over, valgte høyt tall slik at vi ikke skal få problemer med at det kommer under noe annet
+Cursor er satt til pointer, slik at musepilen blir til musepeker.
+*/ 
+#krakenLink{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* Posisjonering av container som inneholder Søppel Mons/ plastic monster
+Posisjonering av container som inneholder World Serpent
+Posisjonering satt til absolute slik at den flyttes i forhold til nærmeste anker-element
+Display flex for å bruke flex
+flex-direction satt til column for å sette den i "kolonne"
+justify-content er satt til senter for sentrering
+align-items er satt til senter for sentrering
+top er satt fra 1290% slik at den går videre ned på siden forbi 100% som er skjermen man ser når man kommer inn på siden.*/ 
+#plasticContainer { 
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1290%;
+}
+
+/* Satt bredden til 50% på selve bildet av plastic monster 
+for å matche det mer med omgivelsene */
+#plasticMonster {
+    width: 50%;   
+}
+
+/* image-link til infoside om plastic pollution
+Posisjonert med absolute
+top,left,right,bottom er satt til 0px fra slik at fyller hele diven den står i, og man kan trykke hvor som helst innenfor diven for å komme seg til info siden.
+z-index er satt til 999 slik at den ligger over, valgte høyt tall slik at vi ikke skal få problemer med at det kommer under noe annet
+Cursor er satt til pointer, slik at musepilen blir til musepeker.
+*/
+#plasticLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
+/*Styling av div hierkiet 
+Position sticky settes her slik at alle andre div som er children av denne vil også få sticky og dermed vil hele "overlayet" være sticky. Dette er for å få effekten av at vi dykker ned i havet.
+*/  
+/*
+top er satt som 0 da den skal være 0 fra toppen for å starte "øverst".
+z-index 1 for å få det over imagecontainer.
+transform scale 1 er tatt med for å ha oversikt
+*/
+.window{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transform: scale(1);
+ 
+}
+/* Diven her er for å ha 100% av skjermen når sticky "aktiveres".
+display:flex samt flex-direction:column, for å at vi bruker flex til å få overlayet til å bli korrekt sentrert if. høyde
+flex-direction column */
+.windowFill {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  
+}
+ /* Posisjonering, scaling og styling av bakgrunn
+Her ligger selve bildet som er overlayet
+max-width, height,width, samt object fit med contain er for å få overlayet til å bli plassert korrekt i henhold til skjerm og divene
+Transform scale 1.3 er for å øke strl. på bildet med 30%
+*/
+#overlay{
+  max-width: 100%;
+  height: 80%;
+  width: 100%;
+  object-fit: contain;
+  transform: scale(1.3); 
+}
+
+/* Styling/posisjonering av container som inneholder bakgrunn 
+DIVen som overlay bildet ligger i
+Benytter flex
+og row her for å få korrekt posisjonering.*/
+.middleContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Posisjonering og animasjon "settings" for måken
+Posisiton absolute for nøyaktig plassering
+right minus 50px så den er 50px fra høyre.
+top til 10px slik at måken er litt under toppen av siden.
+animation-name henter keyframen
+animation-duration satt til 6s, hvor lang tid den bruker
+animation-timing-function er satt til ease in out slik at den "easer" i starten og slutten av animasjonen
+animation-iteration-count er satt til infinte slik at den looper for alltid
+z-index er satt til 1 for å få den over elementene i veien.*/
+#seagull {
+  position: absolute;
+  right: -50px;
+  top: 10px;
+  animation-name: seagullfly;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 1;
+ }
+
+/* Styling for skyene 1-3,samme kommentar for alle 3
+postion satt til absolute for lettere plassering uansett zoom(samme som seagull)
+left:forteller hvor mange px fra venstre
+animation-name henter inn keyframen
+animaton-duration bestemmer lengden på keyframen, forskjellig fra cloud1-3 pga effekten det gir
+animation-timing-function er satt til ease in out slik at den "easer" i starten og slutten av animasjon
+animation-iteration-count er satt til infinte slik at den looper for alltid
+z-index -1 for at skyene skal være bak måka.
+*/ 
+#cloud1 {
+  position: absolute;
+  left: -250px;
+  animation-name: cloud;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index:-1;
+}
+
+#cloud2 {
+  position: absolute;
+  left: 540px;
+  animation-name: cloud;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index:-1;
+}
+
+#cloud3 {
+  position: absolute;
+  left: 900px;
+  animation-name: cloud;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index:-1;
+}
+
+/* Keyframes animasjon for skydekke som svever på top
+på 50% beveger deb seg 10px ned i forhold til top, på 0 og 100% så er den på plass. Skaper "sveve" effekt
+*/
+@keyframes cloud {
+  0% {
+      top: -300px;
+  }
+  50% {
+      top: -290px;
+  }
+  100% {
+    top: -300px;
+  }
+  
+}
+/* Keyframe animasjon for måken som flyr over skjermen
+0% starter på utensiden av skjermen -500px
+100% er forbi skjermen på v.side
+
+*/
+ @keyframes seagullfly {
+  0% {
+      right:-500px;
+  }
+  100% {
+      right: 2000px;
+  }
+  
+}
+/* Animasjon På h taggene slik at texten blir animert
+keyframes angir navn på animasjonen
+0% setter teksten til hvit
+50% setter teksten til sort endrer også her text-shaddow
+100% setter teksten til blå
+
+text-shadow setter først skyggen litt utenfor selve teksten
+bruker rgba til å velge farge samt alpha
+*/
+@keyframes headings{
+  0% {
+    color:white;
+    text-shadow: 0.05em 0 0 rgba(255, 0,0,0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgb(0, 0, 255, 0.75);
+    
+  }
+  50% {
+    color:black;
+    text-shadow: -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.05em 0 0 rgba(255, 0, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    color:#2b9cfb;
+    text-shadow: 0.05em 0 0 rgba(255, 0,0,0.75),
+       -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+        0.025em  0.05em 0 rgb(0, 0, 255, 0.75);
+      
+  }
+}
+/*Animasjon for alle monstre som skal bevege seg opp og ned 
+keyframes angir navn på animasjonen
+bruker from til å sette y verdien til 0(der den er nå)
+Bruker totil å sette y verdier opp 75px opp
+*/
+@keyframes upNDown{
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(75px);
+    }
+}

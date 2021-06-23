@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>Index</title>
+    </head>
+
+    <body>
+        <!--Oppretter section med class for styling. 
+            h1 med id som hovedoversikt.
+            h3 med id som underoversikt/en del av overskriften.
+            span med stylet class som mellomrom
+            h5 med id for mer info/overskrift om hva man kan gjøre på siden
+         -->
+        <section class="headings">
+            <h1 id="title">Hello Stranger!</h1>
+            <h3 id="subhead">Scroll down to explore the depths of the ocean
+            <span class="break"></span>and the monsters they contain</h3>
+            
+            <h5 id="clickInfo">Click on the different creatures to learn more</h5>
+        </section>
+        <!--Oppretter en div for å samle det som skal være sammen på toppen av siden.
+            Henter inn bildet med img src, skriver inn alt som vises om bildet ikke kan lastes inn.
+            Gir hvert bilde en egen id for å gjøre indiviuelle endringer i css.
+         -->
+        <div>
+            <img src="images/seagull.gif" alt="seagull" id="seagull"/>
+            <img src="images/clouds.png" alt="cloud" id="cloud1"/>
+            <img src="images/clouds.png" alt="cloud" id="cloud2"/>
+            <img src="images/clouds.png" alt="cloud" id="cloud3"/>
+        </div>
+        <!--Oppretter et hierki av div for å få sticky bla i css til å fungere.
+            Gir hver div en class.
+            Henter inn bildet som brukes som overlay på siden
+        -->
+        <div class="window">
+            <div class="windowFill">
+                <div class="middleContainer">
+                    <img src="images/windowmbakgrunn-min.png" alt="overlay" id="overlay" />
+                </div>
+            </div>     
+        </div>
+        <!--Oppretter en div for å holde alle bildene i samme "beholder", og gir class for css styling
+            Setter hvert bilde inn i en egen div.
+            Alle utenom umibozu får samme class, dette er for styling av plassering.
+            Bruker a href i div'en til hvert monster for å linke til info siden til monsteret. 
+         -->
+        <div class="imageContainer">
+
+            <div id="umibozuContainer">
+                <img src="images/umibozu.jpg" alt="Umibozu" id="umibozu"/>
+                <a href="umibozu.html" id="umibozuLink"></a>
+            </div>
+   
+            <div id="serpentContainer">
+                <img src="images/worldSerp.png" alt="World Serpent" id="serpent" class="images"/>
+                <a href="worldserpent.html" id="serpentLink"></a>
+            </div>
+            
+            <div id="leviathanContainer">
+                <img src="images/leviathan.png" alt="Leviathan" id="leviathan" class="images"/>
+                <a href="leviathan.html" id="leviathanLink"></a>
+            </div>
+            
+            <div id="krakenContainer">
+                <img src="images/kraken.png" alt="kraken" id="kraken" class="images"/> 
+                <a href="kraken.html" id="krakenLink"></a>
+            </div>
+            
+            <div id="plasticContainer">
+                <img src="images/garbage.png" alt="plastic" id="plasticMonster" class="images"/>
+                <a href="plastic.html" id="plasticLink"></a>
+            </div>
+
+        </div>
+    
+    </body>
+
+</html>
+
+
